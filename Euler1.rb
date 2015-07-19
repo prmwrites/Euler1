@@ -13,21 +13,34 @@ def three_array
   array.select{|n| (n % 3).zero?}
 end
 
-# finds multiples of 5 in our array
+# Finds multiples of 5 in our array
 def five_array
   array.select{|n| (n % 5).zero?}
 end
 
+# Finds multiples of 15 in our array
+def fifteen_array
+  array.select{|n| (n % 15).zero?}
+end
+
+# adds the elements of the 'multiples of 3' array into one sum
 def sum_three_array
   three_array.inject(:+)
 end
 
+# adds the elements of the 'multiples of 5' array into one sum
 def sum_five_array
   five_array.inject(:+)
 end
 
+# adds the elements of the 'multiples of 5' array into one sum
+def sum_fifteen_array
+  fifteen_array.inject(:+)
+end
+
+# adds the two summed arrays together, subtracts extra multiples of 15
 def sum_arrays
-  sum_three_array + sum_five_array
+  sum_three_array + sum_five_array - sum_fifteen_array
 end
 
 puts sum_arrays
